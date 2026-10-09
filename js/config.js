@@ -28,8 +28,8 @@ export const birthdayConfig = {
     { src: "assets/photos/photo5.jpeg",  caption: "I still smile at this one",       alt: "A smiling memory" },
     { src: "assets/photos/photo6.jpeg",  caption: "Us, being us",                    alt: "Us together" },
     { src: "assets/photos/photo7.jpeg",  caption: "A small moment that meant everything", alt: "A small moment" },
-    { src: "assets/photos/photo8.jpeg",  caption: "Golden hour, golden you",         alt: "Golden hour" },
-    { src: "assets/photos/photo9.jpg",  caption: "I'd relive this day forever",     alt: "A day to relive" },
+    { src: "assets/photos/photo8.jpg",  caption: "Golden hour, golden you",         alt: "Golden hour" },
+    { src: "assets/photos/photo9.jpeg",  caption: "I'd relive this day forever",     alt: "A day to relive" },
     { src: "assets/photos/photo10.jpg", caption: "Always you ♡",                    alt: "Always you" }
   ],
 
