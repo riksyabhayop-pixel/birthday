@@ -1,0 +1,12 @@
+#ch-galaxy{ background:#000; }
+#ch-galaxy .gx-canvas{ position:absolute; inset:0; touch-action:none; cursor:grab; }
+#ch-galaxy .gx-canvas:active{ cursor:grabbing; }
+#ch-galaxy .gx-canvas canvas{ display:block; width:100%; height:100%; }
+#ch-galaxy .gx-text{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(90vw,880px); text-align:center; pointer-events:none; z-index:5; }
+#ch-galaxy .gx-title{ font-family:var(--script); font-weight:400; font-size:clamp(2.3rem,7.2vw,5.4rem); line-height:1.1; color:var(--white); opacity:0;
+  text-shadow:0 0 18px rgba(255,63,120,.95), 0 0 60px rgba(255,63,120,.7), 0 0 120px rgba(143,18,53,.8); }
+#ch-galaxy .gx-sub{ margin-top:.6rem; font-family:var(--serif); font-style:italic; font-size:clamp(1.05rem,2.8vw,1.6rem); color:var(--blush); opacity:0;
+  text-shadow:0 0 18px rgba(255,63,120,.8), 0 2px 12px #000; }
+#ch-galaxy .gx-loading{ position:absolute; inset:0; display:grid; place-items:center; color:var(--soft); font-style:italic; letter-spacing:.08em; pointer-events:none; transition:opacity .8s; }
+#ch-galaxy .gx-loading.is-off{ opacity:0; }
+#ch-galaxy .photo-tip{ transition:opacity .35s; }

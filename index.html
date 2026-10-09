@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Happy Birthday ♡</title>
+<meta name="theme-color" content="#050006" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff3f78' d='M12 21.6 4.1 13.7a5.1 5.1 0 0 1 7.2-7.2l.7.7.7-.7a5.1 5.1 0 1 1 7.2 7.2z'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Pixelify+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/proposal.css" />
+<link rel="stylesheet" href="css/blossom.css" />
+<link rel="stylesheet" href="css/galaxy.css" />
+<link rel="stylesheet" href="css/birthday.css" />
+<link rel="stylesheet" href="css/crystal.css" />
+<link rel="stylesheet" href="css/gift.css" />
+<script type="importmap">
+{ "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+} }
+</script>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===================== CHAPTER 1 · THE LETTER ===================== -->
+  <section class="chapter" id="ch-proposal" aria-label="Chapter 1 — The letter" data-trail-mode="dark">
+    <div class="fx" aria-hidden="true"><div class="fx__aurora"></div><div class="fx__vignette"></div><div class="fx__grain"></div></div>
+    <canvas class="ambient" id="proposalAmbient" aria-hidden="true"></canvas>
+    <div class="rain" id="rain" aria-hidden="true"></div>
+    <main class="scene">
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <div class="stage stage--aim" id="aimStage" tabindex="0" role="application" data-noswipe
+           aria-label="Aim and shoot Cupid's arrow at the envelope to open it. Press space or enter to shoot.">
+        <div class="target" id="target">
+          <div class="envelope" aria-hidden="true">
+            <span class="envelope__flap"></span><span class="heart envelope__seal"></span>
+          </div>
+          <p class="target__label"><span class="heart heart--inline"></span><span id="envLabel"></span><span class="heart heart--inline"></span></p>
+        </div>
+        <div class="arrow" id="arrow" aria-hidden="true"></div>
+        <div class="archer" id="archer" aria-hidden="true">
+          <canvas class="cupid" id="cupid" width="16" height="16"></canvas>
+          <div class="bow" id="bow"></div><span class="nock" id="nock"></span>
+        </div>
+        <p class="hint" id="hint"><span id="hintText"></span><span class="heart heart--inline"></span></p>
+      </div>
+
+      <section class="window" id="window" aria-hidden="true" data-trail="light">
+        <header class="titlebar">
+          <span class="titlebar__name">LOVE</span>
+          <span class="titlebar__btns"><span class="winbtn" aria-hidden="true">&#95;</span><span class="winbtn" aria-hidden="true">&#9633;</span><span class="winbtn winbtn--x" aria-hidden="true">&#10005;</span></span>
+        </header>
+        <div class="heartrow" aria-hidden="true"><span class="heart"></span><span class="hdot"></span><span class="heart"></span><span class="hdot"></span><span class="heart"></span></div>
+        <div class="content" id="content">
+          <h1 class="title" id="title"></h1>
+          <div class="letter-lines" id="letterLines"></div>
+          <canvas class="cat" id="cat" width="16" height="16" aria-label="A little cat holding a heart" role="img"></canvas>
+          <div class="buttons" id="buttons" hidden>
+            <button class="btn btn--yes" type="button" id="yesBtn"></button>
+            <button class="btn btn--no" type="button" id="noBtn"></button>
+          </div>
+          <p class="final" id="final" hidden></p>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ===================== CHAPTER 2 · THE GARDEN ===================== -->
+  <section class="chapter" id="ch-blossom" aria-label="Chapter 2 — The garden" data-trail-mode="dark">
+    <canvas class="bl-hearts" id="blHearts" aria-hidden="true"></canvas>
+    <div class="romantic-overlay" aria-hidden="true"></div>
+    <div class="bl-mist" aria-hidden="true"></div>
+    <div class="bl-ground-glow" aria-hidden="true"></div>
+    <div class="bl-stage"><div class="ground" id="blGround"></div></div>
+    <div class="bl-photos" id="blPhotos"></div>
+    <p class="chapter-msg bl-msg" id="blMsg"></p>
+  </section>
+
+  <!-- ===================== CHAPTER 3 · THE GALAXY ===================== -->
+  <section class="chapter" id="ch-galaxy" aria-label="Chapter 3 — The galaxy" data-trail-mode="dark">
+    <div class="gx-canvas" id="gxCanvas" data-noswipe></div>
+    <div class="gx-text" id="gxText">
+      <h2 class="gx-title" id="gxTitle"></h2>
+      <p class="gx-sub" id="gxSub"></p>
+    </div>
+    <div class="photo-tip" id="gxTip" aria-hidden="true"></div>
+    <div class="gx-loading" id="gxLoading">gathering the stars…</div>
+  </section>
+
+  <!-- ===================== CHAPTER 4 · THE BIRTHDAY TREE ===================== -->
+  <section class="chapter" id="ch-birthday" aria-label="Chapter 4 — The birthday tree" data-trail-mode="dark">
+    <div class="bd-bg" aria-hidden="true"></div>
+    <canvas class="bd-canvas" id="bdCanvas" role="img" aria-label="A tree grows and blooms into a heart of pink blossoms"></canvas>
+    <button class="bd-seedhint" id="bdSeedBtn" type="button"></button>
+    <div class="bd-text" id="bdText"><h2 class="bd-title" id="bdTitle"></h2><p class="bd-sub" id="bdSub"></p></div>
+  </section>
+
+  <!-- ===================== CHAPTER 5 · THE CRYSTAL HEART ===================== -->
+  <section class="chapter" id="ch-crystal" aria-label="Chapter 5 — The crystal heart" data-trail-mode="dark">
+    <div class="cr-canvas" id="crCanvas" data-noswipe></div>
+    <p class="cr-line cr-line--1" id="crLine1"></p>
+    <p class="cr-line cr-line--2" id="crLine2"></p>
+    <div class="photo-tip" id="crTip" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===================== CHAPTER 6 · THE GIFT ===================== -->
+  <section class="chapter" id="ch-gift" aria-label="Chapter 6 — The gift" data-trail-mode="dark">
+    <canvas class="gf-canvas" id="gfCanvas" aria-hidden="true"></canvas>
+    <div class="gf-photos" id="gfPhotos" aria-hidden="true"></div>
+    <div class="gf-flood" id="gfFlood" aria-hidden="true"></div>
+    <p class="gf-lead" id="gfLead"></p>
+    <button class="gf-gift" id="gfGift" type="button" aria-label="Open your gift">
+      <span class="gf-glow"></span>
+      <span class="gf-box">
+        <span class="gf-lid"><span class="gf-bow"><i></i><i></i><b></b></span></span>
+        <span class="gf-body"></span>
+        <span class="gf-ribbon-v"></span>
+      </span>
+      <span class="gf-beam"></span>
+    </button>
+    <p class="gf-tap" id="gfTap"></p>
+    <div class="gf-final" id="gfFinal">
+      <h1 class="gf-headline" id="gfHeadline"></h1>
+      <div class="gf-msg" id="gfMsg"></div>
+      <p class="gf-thanks" id="gfThanks"></p>
+      <p class="gf-closing" id="gfClosing"></p>
+      <p class="gf-sign" id="gfSign"></p>
+      <button class="gf-replay" id="gfReplay" type="button"></button>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== GLOBAL LAYERS ===================== -->
+<div id="veil" aria-hidden="true"><div class="veil__bloom"></div></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+
+<div id="intro" role="dialog" aria-label="Begin">
+  <div class="intro__stars" aria-hidden="true"></div>
+  <p class="intro__eyebrow" id="introEyebrow"></p>
+  <h1 class="intro__name" id="introName"></h1>
+  <p class="intro__tap" id="introTap"></p>
+</div>
+
+<nav id="chapterNav" aria-label="Chapters"></nav>
+<button id="skipBtn" type="button">Skip →</button>
+
+<div id="music">
+  <input id="volume" type="range" min="0" max="1" step="0.01" aria-label="Music volume" />
+  <button id="musicBtn" type="button" aria-label="Mute music" aria-pressed="false">♫</button>
+</div>
+<audio id="bgm" loop preload="auto" playsinline></audio>
+
+<noscript><p style="color:#fff;padding:2rem">This birthday gift needs JavaScript ♡</p></noscript>
+<script src="vendor/gsap.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
